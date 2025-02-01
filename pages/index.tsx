@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <div className={`Home`}>
       <div className={'HomeBody'}>
-        <Blockquote/>
-        <ShootingStarsAndStarsBackgroundDemo/>
+        {/* <Blockquote/>
+        <ShootingStarsAndStarsBackgroundDemo/> */}
         <MusicPlayer/>
       </div>
     </div>
