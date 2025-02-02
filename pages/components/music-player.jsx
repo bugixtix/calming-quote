@@ -10,34 +10,43 @@ import Image from "next/image";
 import Lofi from '@/public/lofi.jpg'
 import MP3_DATA from '@/pages/mp3_list.json'
 
+function MP3_DATA_SCHUFFLED(){
+    return MP3_DATA.sort(() => Math.random() - 0.5)
+}
 export const MusicPlayer = () =>{
     // const pfad = '/mp3/good_night_lofi.mp3'
-    const [track, setTrack] = useState(MP3_DATA[1])
+    const [trackNr, setTrackNr] = useState(1)
+    const [track, setTrack] = useState(MP3_DATA[0])
     const [playing, setPlaying] = useState(false)
     const [currentTime, setCurrentTime] = useState(0)
     const [maxTime, setMaxTime] = useState(0)
     const soundRef = useRef()
 
+    // useEffect(()=>{
+    // },[trackNr])
     
     useEffect(()=>{
+        setTrack(MP3_DATA_SCHUFFLED[trackNr])
         soundRef.current = new Audio(track.track_url)
         // new code from chatgpt
         const audio = soundRef.current;
         const updateTime=()=>setCurrentTime(audio.currentTime.toFixed())
         const updateDuration=()=>setMaxTime(audio.duration.toFixed())
-        const updatePath=()=>setTrack(MP3_DATA[2])
+        const updatePath=()=>{DoNextAudio()}
         
         audio.addEventListener("timeupdate", updateTime)
         audio.addEventListener("loadedmetadata", updateDuration)
         audio.addEventListener("ended", updatePath)
-
+        
         return()=> {
             audio.removeEventListener("timeupdate", updateTime)
             audio.removeEventListener("loadedmetadata", updateDuration)
             audio.removeEventListener("ended", updatePath)
         }
         // 
-    },[track])
+    },[trackNr])
+
+
     const HandleSound =()=>{
         if(!playing) 
         {soundRef.current.play()
@@ -62,11 +71,28 @@ export const MusicPlayer = () =>{
         }
         return `${mins}:${secs}`
     }
+    function DoNextAudio(){
+        setTrack(MP3_DATA_SCHUFFLED[trackNr])
+        setTrackNr(p=>p=p+1)
+        setCurrentTime(0)
+        setMaxTime(0)
+        setTimeout(()=>{
+            console.log(playing)
+            soundRef.current.play()
+        }, 1000)
+    }
+    function HandleClick(){
+        setTrack(MP3_DATA[trackNr])
+        setTrackNr(p=>p=p+1)
+        setCurrentTime(0)
+        setMaxTime(0)
+    }   
+    
    return(
     <div className="MusicPlayer">
         <div className="MusicPlayerBody">
             <div className="player--img">
-                <Image src={track.track_cover || '/lofi.jpg'} width={100} height={100} className="image"/>
+                <Image priority src={track?.track_cover || '/lofi.jpg'} width={100} height={100} className="image"/>
                 {/* <span>img here</span> */}
             </div>
             <div className="player--content">
@@ -89,6 +115,7 @@ export const MusicPlayer = () =>{
                     playing ? <PauseOl className="play-icon"/> :  <PlayOl className="play-icon"/>
                 }
                 </button>
+                <button onClick={HandleClick}> click</button>
             </div>
         </div>
 
