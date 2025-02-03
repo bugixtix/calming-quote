@@ -1,6 +1,6 @@
 'use client'
 import {Card, CardBody, Button, Progress, CardProps} from "@heroui/react";
-import {useState, FC, useEffect, useRef} from "react";
+import {useState, FC, useEffect, useRef, useMemo} from "react";
 import {clsx} from "@heroui/shared-utils";
 import { MdOutlinePauseCircleOutline as PauseOl} from "react-icons/md";
 import { MdOutlinePauseCircleFilled as PauseFi } from "react-icons/md";
@@ -9,42 +9,77 @@ import { MdPlayCircleOutline as PlayOl } from "react-icons/md";
 import Image from "next/image";
 import Lofi from '@/public/lofi.jpg'
 import MP3_DATA from '@/pages/mp3_list.json'
+import { shuffledMP3 } from "./shuffle";
 
-function MP3_DATA_SCHUFFLED(){
-    return MP3_DATA.sort(() => Math.random() - 0.5)
-}
 export const MusicPlayer = () =>{
-    // const pfad = '/mp3/good_night_lofi.mp3'
-    const [trackNr, setTrackNr] = useState(1)
-    const [track, setTrack] = useState(MP3_DATA[0])
+
+    const [trackNr, setTrackNr] = useState(0)
+    const [track, setTrack] = useState([
+        {track_name:"out",
+        track_cover:"/covers/lofi_girl_dreams.svg",
+        track_author:"FASSounds",
+        track_url:"/mp3/test1.mp3"}
+    ])
+    const soundRef = useRef()
     const [playing, setPlaying] = useState(false)
     const [currentTime, setCurrentTime] = useState(0)
     const [maxTime, setMaxTime] = useState(0)
-    const soundRef = useRef()
-
-    // useEffect(()=>{
-    // },[trackNr])
+    const [ended, setEnded] = useState(false)
+    const [started, setStarted] = useState(false)
     
     useEffect(()=>{
-        setTrack(MP3_DATA_SCHUFFLED[trackNr])
-        soundRef.current = new Audio(track.track_url)
-        // new code from chatgpt
-        const audio = soundRef.current;
-        const updateTime=()=>setCurrentTime(audio.currentTime.toFixed())
-        const updateDuration=()=>setMaxTime(audio.duration.toFixed())
-        const updatePath=()=>{DoNextAudio()}
-        
-        audio.addEventListener("timeupdate", updateTime)
-        audio.addEventListener("loadedmetadata", updateDuration)
-        audio.addEventListener("ended", updatePath)
-        
+        const array = shuffledMP3()
+        setTrack(array)
+        function handleStart(){
+            setStarted(true)
+            document.body.removeEventListener("click", handleStart)
+        }
+        // document.querySelector('.body').addEventListener('click',handleStart )
+        document.body.addEventListener("click", handleStart, { once: true });
+        return ()=> {document.body.removeEventListener('click', handleStart)}
+    },[])
+    useEffect(()=>{
+        function Do(){
+            soundRef.current.play()
+            setPlaying(true)
+            setStarted(false)
+        }
+        if(started){
+            setTimeout(Do, 1000)}
+        return ()=>{
+            clearTimeout(Do, 1000)
+        }
+    },[started])
+    
+    useEffect(()=>{
+
+        if(track[trackNr].track_name !== 'out'){
+
+            soundRef.current = new Audio(track[trackNr].track_url)
+            const audio = soundRef.current;
+
+            const updateTime=()=>setCurrentTime(audio.currentTime.toFixed())
+            const updateDuration=()=>setMaxTime(audio.duration.toFixed())
+            const updatePath=()=>{DoNextAudio()}
+            
+            audio.addEventListener("timeupdate", updateTime)
+            audio.addEventListener("loadedmetadata", updateDuration)
+            audio.addEventListener("ended", updatePath)
+            
+            if(ended){
+                setTimeout(()=>{
+                    soundRef.current.play()
+                    setEnded(false)
+            }, 1000)}
+            
         return()=> {
             audio.removeEventListener("timeupdate", updateTime)
             audio.removeEventListener("loadedmetadata", updateDuration)
             audio.removeEventListener("ended", updatePath)
         }
+    }
         // 
-    },[trackNr])
+    },[trackNr,track])
 
 
     const HandleSound =()=>{
@@ -55,10 +90,8 @@ export const MusicPlayer = () =>{
             soundRef.current.pause()
             setPlaying(false)
         }
-        console.log(soundRef.current.duration)
     }
-    const updateTime = () =>{
-    }
+
     const formatTime = seconds =>{
         let mins = 0
         let secs = 0
@@ -72,18 +105,13 @@ export const MusicPlayer = () =>{
         return `${mins}:${secs}`
     }
     function DoNextAudio(){
-        setTrack(MP3_DATA_SCHUFFLED[trackNr])
-        setTrackNr(p=>p=p+1)
+        setTrackNr(p=>p!==MP3_DATA.length-1 ? p=p+1 : p=0);
         setCurrentTime(0)
         setMaxTime(0)
-        setTimeout(()=>{
-            console.log(playing)
-            soundRef.current.play()
-        }, 1000)
+        setEnded(true)
     }
     function HandleClick(){
-        setTrack(MP3_DATA[trackNr])
-        setTrackNr(p=>p=p+1)
+        setTrackNr(p=>p!==MP3_DATA.length-1 ? p=p+1 : p=0);
         setCurrentTime(0)
         setMaxTime(0)
     }   
@@ -92,13 +120,12 @@ export const MusicPlayer = () =>{
     <div className="MusicPlayer">
         <div className="MusicPlayerBody">
             <div className="player--img">
-                <Image priority src={track?.track_cover || '/lofi.jpg'} width={100} height={100} className="image"/>
-                {/* <span>img here</span> */}
+                <Image priority alt="track image" src={track[trackNr]?.track_cover || '/lofi.jpg'} width={100} height={100} className="image"/>
             </div>
             <div className="player--content">
                 <div className="player--info">
-                    <h2> {track?.track_name || "Unknown Track"} </h2>
-                    {/* <p>Author</p> */}
+                    <h2> {track[trackNr]?.track_name || "Unknown Track"} </h2>
+                    <span>{track[trackNr]?.track_author || "Unknown Author"}</span>
                 </div>
                 <div className="player--options">
                     <ProgressBar currentValue={currentTime} maxValue={soundRef.current?.duration||1}/>
@@ -115,7 +142,7 @@ export const MusicPlayer = () =>{
                     playing ? <PauseOl className="play-icon"/> :  <PlayOl className="play-icon"/>
                 }
                 </button>
-                <button onClick={HandleClick}> click</button>
+                {/* <button onClick={HandleClick}> click</button> */}
             </div>
         </div>
 
