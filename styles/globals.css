@@ -143,8 +143,13 @@ body {
  display: flex; flex-direction: column;
 }
 .player--info{
-  display: flex; flex-direction: row;
+  display: flex; flex-direction: row; align-items: baseline; gap: 0.4rem; justify-content: space-between;
   font-size: 0.8rem;
+  width: 100%;
+}
+.player--info span{
+  font-size: 0.6rem;
+  color: silver;
 }
 .player--options{
   width: 100%;
@@ -206,5 +211,8 @@ body {
  } 
  .BlockquoteBody{
   width: 90%;
+ }
+ .player--info span{
+  display: none;
  }
 }
