@@ -9,73 +9,72 @@
         "track_name":"Test01",
         "track_cover":"/covers/lofi_girl_dreams.svg",
         "track_author":"FASSounds",
-        "track_url":"/mp3/test1.mp3",
-        "childs":[    {
-            "track_name":"Good Night - Lofi Cozy Chill Music",
-            "track_cover":"/covers/good_night_lofi.webp",
-            "track_author":"FASSounds",
-            "track_url":"/mp3/good_night_lofi.mp3"
-        },
-        {
-            "track_name":"Lofi Girl Dreams",
-            "track_cover":"/covers/lofi_girl_dreams.svg",
-            "track_author":"chill_background",
-            "track_url":"/mp3/lofi_girl_dreams.mp3"
-        },
-        {
-            "track_name":"Lofi In Your Arms",
-            "track_cover":"/covers/lofi_in_your_arms.jpg",
-            "track_author":"TermoxBeatz",
-            "track_url":"/mp3/lofi_in_your_arms.mp3"
-        },
-        {
-            "track_name":"Lofi Ascend",
-            "track_cover":"/covers/ascend.svg",
-            "track_author":"PremiumMusicOdyssey",
-            "track_url":"/mp3/ascend.mp3"
-        },
-        {
-            "track_name":"Lofi Vibes",
-            "track_cover":"/covers/lofi_vibes.svg",
-            "track_author":"chill_background",
-            "track_url":"/mp3/lofi_vibes.mp3"
-        },
-        {
-            "track_name":"Lullaby For Strangers",
-            "track_cover":"/covers/lullaby_for_strangers.webp",
-            "track_author":"RibhavAgrawal",
-            "track_url":"/mp3/lullaby_for_strangers.mp3"
-        },
-        {
-            "track_name":"Nostalgic Street Lights glow",
-            "track_cover":"/covers/nostalgic_streetlights_glow.webp",
-            "track_author":"RibhavAgrawal",
-            "track_url":"/mp3/nostalgic_streetlights_glow.mp3"
-        },
-        {
-            "track_name":"Nostalgic",
-            "track_cover":"/covers/nostalgic.jpg",
-            "track_author":"LFC_Records",
-            "track_url":"/mp3/nostalgic.mp3"
-        },
-        {
-            "track_name":"Old Feelings",
-            "track_cover":"/covers/old_feelings.webp",
-            "track_author":"LFC_Records",
-            "track_url":"/mp3/old_feelings.mp3"
-        },
-        {
-            "track_name":"Lofi Tasty",
-            "track_cover":"/covers/tasty.webp",
-            "track_author":"FASSounds",
-            "track_url":"/mp3/tasty.mp3"
-        },
-        {
-            "track_name":"Wandering Soul",
-            "track_cover":"/covers/wandering_soul.webp",
-            "track_author":"RibhavAgrawal",
-            "track_url":"/mp3/wandering_soul.mp3"
-        }]
+        "track_url":"/mp3/test1.mp3"
+    },
+    {
+        "track_name":"Girl Dreams",
+        "track_cover":"/covers/lofi_girl_dreams.svg",
+        "track_author":"chill_background",
+        "track_url":"/mp3/lofi_girl_dreams.mp3"
+    },
+    {
+        "track_name":"In Your Arms",
+        "track_cover":"/covers/lofi_in_your_arms.jpg",
+        "track_author":"TermoxBeatz",
+        "track_url":"/mp3/lofi_in_your_arms.mp3"
+    },
+    {
+        "track_name":"Lofi Ascend",
+        "track_cover":"/covers/ascend.svg",
+        "track_author":"PremiumMusicOdyssey",
+        "track_url":"/mp3/ascend.mp3"
+    },
+    {
+        "track_name":"Lofi Vibes",
+        "track_cover":"/covers/lofi_vibes.svg",
+        "track_author":"chill_background",
+        "track_url":"/mp3/lofi_vibes.mp3"
+    },
+    {
+        "track_name":"Lullaby For Strangers",
+        "track_cover":"/covers/lullaby_for_strangers.webp",
+        "track_author":"RibhavAgrawal",
+        "track_url":"/mp3/lullaby_for_strangers.mp3"
+    },
+    {
+        "track_name":"Nostalgic Street Lights glow",
+        "track_cover":"/covers/nostalgic_streetlights_glow.webp",
+        "track_author":"RibhavAgrawal",
+        "track_url":"/mp3/nostalgic_streetlights_glow.mp3"
+    },
+    {
+        "track_name":"Nostalgic",
+        "track_cover":"/covers/nostalgic.jpg",
+        "track_author":"LFC_Records",
+        "track_url":"/mp3/nostalgic.mp3"
+    },
+    {
+        "track_name":"Old Feelings",
+        "track_cover":"/covers/old_feelings.webp",
+        "track_author":"LFC_Records",
+        "track_url":"/mp3/old_feelings.mp3"
+    },
+    {
+        "track_name":"Lofi Tasty",
+        "track_cover":"/covers/tasty.webp",
+        "track_author":"FASSounds",
+        "track_url":"/mp3/tasty.mp3"
+    },
+    {
+        "track_name":"Wandering Soul",
+        "track_cover":"/covers/wandering_soul.webp",
+        "track_author":"RibhavAgrawal",
+        "track_url":"/mp3/wandering_soul.mp3"
+    },{
+        "track_name":"Good Night",
+        "track_cover":"/covers/good_night_lofi.webp",
+        "track_author":"FASSounds",
+        "track_url":"/mp3/good_night_lofi.mp3"
     }
 
 
