@@ -1,0 +1,158 @@
+[
+    {
+        "day":1,
+        "text":"Erfolg kommt nicht über Nacht. Es ist das Ergebnis harter Arbeit, Ausdauer, Lernens, Opfer und vor allem der Liebe zu dem, was man tut.",
+        "author":"Pele"
+    },
+    {
+        "day":2,
+        "text":"Wenn du an dich selbst glaubst und hart arbeitest, kann dir niemand deine Träume nehmen.",
+        "author":"Usain Bolt"
+    },
+    {
+        "day":3,
+        "text":"Der einzige Weg, großartige Arbeit zu leisten, ist, zu lieben, was man tut. Wenn du es noch nicht gefunden hast, suche weiter. Gib dich nicht zufrieden.",
+        "author":"Steve Jobs"
+    },
+    {
+        "day":4,
+        "text":"Mut bedeutet nicht, keine Angst zu haben, sondern sich ihr zu stellen und trotzdem weiterzumachen.",
+        "author":"Nelson Mandela"
+    },
+    {
+        "day":5,
+        "text":"Die größten Erfolge entstehen oft aus den größten Herausforderungen. Bleib dran, auch wenn es schwer wird.",
+        "author":"Unbekannt"
+    },
+    {
+        "day":6,
+        "text":"Du kannst die Richtung des Windes nicht ändern, aber du kannst die Segel so setzen, dass du dein Ziel erreichst.",
+        "author":"Aristoteles"
+    },
+    {
+        "day":7,
+        "text":"Jede Reise beginnt mit dem ersten Schritt. Warten bringt dich nicht ans Ziel, sondern das Gehen.",
+        "author":"Laozi"
+    },
+    {
+        "day":8,
+        "text":"Lass dich nicht von der Angst vor dem Scheitern aufhalten. Scheitern ist oft nur ein Umweg auf dem Weg zum Erfolg.",
+        "author":" Thomas Edison"
+    },
+    {
+        "day":9,
+        "text":"Nicht der Schnellste oder Stärkste gewinnt, sondern der, der niemals aufgibt.",
+        "author":"Konfuzius"
+    },
+    {
+        "day":10,
+        "text":"Träume groß, arbeite hart, bleib bescheiden und gib niemals auf.",
+        "author":"Dwayne Johnson"
+    },
+    {
+        "day":11,
+        "text":"Der Schlüssel zum Erfolg ist, den Fokus auf die Ziele zu richten, nicht auf die Hindernisse.",
+        "author":"Arnold Schwarzenegger"
+    },
+    {
+        "day":12,
+        "text":"Hindernisse sind die schrecklichen Dinge, die du siehst, wenn du dein Ziel aus den Augen verlierst.",
+        "author":"Henry Ford"
+    },
+    {
+        "day":13,
+        "text":"Gib niemals auf, denn genau in dem Moment, in dem du aufgeben willst, könnte das Wunder geschehen.",
+        "author":"Harriet Beecher Stowe"
+    },
+    {
+        "day":14,
+        "text":"Es gibt keine Grenzen für das, was du erreichen kannst, außer denen, die du dir selbst setzt.",
+        "author":"Les Brown"
+    },
+    {
+        "day":15,
+        "text":"Sei geduldig und hartnäckig. Große Dinge brauchen Zeit.",
+        "author":"Unbekannt"
+    },
+    {
+        "day":16,
+        "text":"Leidenschaft treibt dich an, aber Ausdauer bringt dich ans Ziel",
+        "author":"Angela Duckworth"
+    },
+    {
+        "day":17,
+        "text":"Jede Niederlage ist nur ein Schritt auf dem Weg zum Erfolg, solange du weitermachst.",
+        "author":"Zig Ziglar"
+    },
+    {
+        "day":18,
+        "text":"Das Leben belohnt diejenigen, die nie aufhören, an sich zu arbeiten.",
+        "author":"Unbekannt"
+    },
+    {
+        "day":19,
+        "text":"„Tue jeden Tag etwas, das dich deinem Ziel näherbringt, egal wie klein der Schritt ist.",
+        "author":"Napoleon Hill"
+    },
+    {
+        "day":20,
+        "text":"Das Geheimnis des Erfolges? Anfangen, weitermachen, niemals aufhören.",
+        "author":"Unbekannt"
+    },
+    {
+        "day":21,
+        "text":"Die Zukunft gehört denen, die an die Schönheit ihrer Träume glauben.",
+        "author":"Eleanor Roosevelt"
+    },
+    {
+        "day":22,
+        "text":"Es ist nicht der Berg, den wir bezwingen, sondern uns selbst.",
+        "author":"Edmund Hillary"
+    },
+    {
+        "day":23,
+        "text":"Dein Leben verbessert sich nicht zufällig. Es verbessert sich durch Veränderung.",
+        "author":"Jim Rohn"
+    },
+    {
+        "day":24,
+        "text":"Hoffnung ist nicht die Überzeugung, dass etwas gut ausgeht, sondern die Gewissheit, dass es Sinn macht – egal, wie es ausgeht.",
+        "author":"Václav Havel"
+    },
+    {
+        "day":25,
+        "text":"Erfolg hat drei Buchstaben: TUN.",
+        "author":"Johann Wolfgang von Goethe"
+    },
+    {
+        "day":26,
+        "text":"Wer alles mit einem Lächeln beginnt, dem wird das meiste gelingen.",
+        "author":"Dalai Lama"
+    },
+    {
+        "day":27,
+        "text":"Verändere deine Gedanken, und du veränderst deine Welt.",
+        "author":"Norman Vincent Peale"
+    },
+    {
+        "day":28,
+        "text":"Es ist nie zu spät, das zu sein, was du hättest sein können.",
+        "author":"George Eliot"
+    },
+    {
+        "day":29,
+        "text":"Ein Diamant ist ein Stück Kohle, das Ausdauer hatte.",
+        "author":"Henry Kissinger"
+    },
+    {
+        "day":30,
+        "text":"Gib nicht auf, nur weil etwas schwierig ist. Große Erfolge entstehen durch kleine Schritte, die du Tag für Tag gehst, auch wenn du noch nicht das ganze Ziel vor Augen hast.",
+        "author":"Unbekannt"
+    },
+    {
+        "day":31,
+        "text":"Der Unterschied zwischen dem, der erfolgreich ist, und dem, der es nicht ist, liegt nicht im Talent oder Glück, sondern in der Entschlossenheit, immer wieder aufzustehen, wenn das Leben ihn zu Boden schlägt.“",
+        "author":"Winston Churchill"
+    }
+
+]
