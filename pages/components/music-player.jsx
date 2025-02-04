@@ -1,17 +1,22 @@
 'use client'
-import {Card, CardBody, Button, Progress, CardProps} from "@heroui/react";
+// import {Card, CardBody, Button, Progress, CardProps} from "@heroui/react";
 import {useState, FC, useEffect, useRef, useMemo} from "react";
-import {clsx} from "@heroui/shared-utils";
+// import {clsx} from "@heroui/shared-utils";
 import { MdOutlinePauseCircleOutline as PauseOl} from "react-icons/md";
-import { MdOutlinePauseCircleFilled as PauseFi } from "react-icons/md";
-import { MdOutlinePlayCircleFilled as PlayFi} from "react-icons/md";
+// import { MdOutlinePauseCircleFilled as PauseFi } from "react-icons/md";
+// import { MdOutlinePlayCircleFilled as PlayFi} from "react-icons/md";
 import { MdPlayCircleOutline as PlayOl } from "react-icons/md";
 import Image from "next/image";
-import Lofi from '@/public/lofi.jpg'
+// import Lofi from '@/public/lofi.jpg'
 import MP3_DATA from '@/pages/mp3_list.json'
-import { shuffledMP3 } from "./shuffle";
+// import shuffledMP3 from "./shuffle.js";
 
 export const MusicPlayer = () =>{
+
+    function shuffledMP3(){
+        const array = MP3_DATA.sort(() => Math.random() - 0.5);
+        return array
+    }
 
     const [trackNr, setTrackNr] = useState(0)
     const [track, setTrack] = useState([
@@ -53,9 +58,9 @@ export const MusicPlayer = () =>{
     
     useEffect(()=>{
 
-        if(track[trackNr].track_name !== 'out'){
+        if(track[trackNr].track_name.toString() !== 'out'){
 
-            soundRef.current = new Audio(track[trackNr].track_url)
+            soundRef.current = new Audio(track[trackNr].track_url.toString())
             const audio = soundRef.current;
 
             const updateTime=()=>setCurrentTime(audio.currentTime.toFixed())
@@ -120,12 +125,12 @@ export const MusicPlayer = () =>{
     <div className="MusicPlayer">
         <div className="MusicPlayerBody">
             <div className="player--img">
-                <Image priority alt="track image" src={track[trackNr]?.track_cover || '/lofi.jpg'} width={100} height={100} className="image"/>
+                <Image priority alt="track image" src={track[trackNr].track_cover.toString() || '/lofi.jpg'} width={100} height={100} className="image"/>
             </div>
             <div className="player--content">
                 <div className="player--info">
-                    <h2> {track[trackNr]?.track_name || "Unknown Track"} </h2>
-                    <span>{track[trackNr]?.track_author || "Unknown Author"}</span>
+                    <h2> {track[trackNr].track_name.toString() || "Unknown Track"} </h2>
+                    <span>{track[trackNr].track_author.toString() || "Unknown Author"}</span>
                 </div>
                 <div className="player--options">
                     <ProgressBar currentValue={currentTime} maxValue={soundRef.current?.duration||1}/>
