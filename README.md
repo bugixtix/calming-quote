@@ -1,40 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Calming-Quote
 
-## Getting Started
+## Overview
+**Calming-Quote** is a website built with **Next.js** and **TypeScript (TSX)**. It provides a good experience with a starry background, shooting stars, a daily motivational quote in the center, and a Lo-Fi music player at the bottom of the page. The purpose of the website is to help users relax, reflect, and find peace while watching the stars, listening to calming music, and thinking about the day's quote.
 
-First, run the development server:
+## Features
+- **Starry Background:** A beautiful, dynamic starry sky with shooting stars (from [Acternity UI](https://ui.aceternity.com/components/shooting-stars-and-stars-background) ).
+- **Daily Motivational Quote:** A quote displayed at the center of the page to inspire and motivate (Hard-Coded in JSON format).
+- **Lo-Fi Music Player:** A music player that plays relaxing Lo-Fi music, perfect for sleep or contemplation (Lo-Fi audios are from different artist on [Pixabay](https://pixabay.com).
+- **Open for Contributions:** If you'd like to contribute, feel free to open a pull request!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![Preview](https://github.com/bugixtix/calming-quote/blob/master/public/screenshot_gif.gif)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Note
+The Code is specialized for German people (Quotes are written in German), I'd be happy if someone picks some English quotes and add a button that toggles between languages.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Installation
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+To get started with the project, follow these steps:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/bugixtix/calming-quote.git
+   ```
+2. Navigate into the project directory:
+   ```bash
+    cd calming-quote
+   ```
+3. Install the dependencies:
+   ```bash
+    npm install
+   ```
+4. Start the development server:
+  ```bash
+  npm run dev
+  ```
+5. Open the browser and navigate to [localhost](http://localhost:3000) to see the website.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Contribution
+Feel free to contribute to the project by opening an issue or submitting a pull request. Any suggestions or improvements are welcome.
 
-## Learn More
+## License
+This project is licensed under the MIT License.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
