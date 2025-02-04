@@ -6,7 +6,10 @@
   --background: #ffffff;
   --foreground: #171717;
 }
-
+@font-face {
+  font-family: "GreatVibes";
+  src: url("../public/GreatVibes-Regular.ttf");
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -18,6 +21,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  cursor: url('../public/star.png'), auto;
 }
 .Home{
   width: 100%;
@@ -63,30 +67,47 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 20;
+  z-index: 40;
   display: flex; flex-direction: column; align-items: center; justify-content:center;
 }
 .BlockquoteBody{
   transition: all ease 800ms;
   text-align: center;
   width: 60%;
-  padding: 1.2rem 1rem 0.8rem 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  padding: 1.6rem 1rem 0.8rem 1rem;
+  background-color: rgba(0, 0, 255, 0.1);
+  /* background-color: rgba(0, 0, 0, 0.05); */
+  border-radius: 24px;
   display: flex; flex-direction: column; align-items: center; justify-content:center;
+  z-index: 40;
   gap: 0.4rem;
-  
+  opacity: 0.4;
+}
+.BlockquoteBody:hover{
+  box-shadow: 0 0 24px rgba(138, 43, 226, 0.8);
+  opacity:1;
+}
+.Blockquote--date{
+  font-family: "GreatVibes", sans-serif;
+  padding: 0rem 0rem 0.4rem 0rem;
+  width: 100%;
+  text-align: center;
 }
 .quote-start, .quote-end{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size:1.5rem;
-  color: green;
+  padding: 0rem 0.2rem;
+  color: #8a2be2;
+  font-weight: 700;
 }
 .quote{
   /*  */
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  letter-spacing: 3px;
+  font-family: "GreatVibes", sans-serif;
 }
 .Blockquote--author{
   width: 100%;
@@ -95,6 +116,8 @@ body {
   display: flex;
   justify-content: flex-end;
   gap: 4px;
+  font-style:oblique;
+  font-family: "GreatVibes", sans-serif;
 }
 
 
@@ -104,17 +127,23 @@ body {
   position: absolute;
   bottom: 1.2rem;
   left: 0;
-  z-index: 20;
+  z-index: 40;
 }
 .MusicPlayerBody{
-  z-index: 20;
-  background-color: rgba(255, 255, 255, 0.05);
+  z-index: 40;
+  background-color: rgba(0, 0, 0, 0.05);
+  
   border-radius: 30px;
   width: 60%;
   display: flex; flex-direction: row; align-items: center;
   position: relative;
   gap: 0.4rem;
   transition: all ease 800ms;
+  opacity: 0.1;
+  box-shadow: 0 0 22px rgba(138, 43, 226, 0.6);
+}
+.MusicPlayerBody:hover{
+  opacity: 1;
 }
 .player--img{
   height: 60px;
@@ -146,6 +175,7 @@ body {
   display: flex; flex-direction: row; align-items: baseline; gap: 0.4rem; justify-content: space-between;
   font-size: 0.8rem;
   width: 100%;
+  font-family: "GreatVibes", sans-serif;
 }
 .player--info span{
   font-size: 0.6rem;
@@ -171,15 +201,19 @@ body {
   z-index: 50;
   width:0px;
   height: 100%;
-  background-color: #007bff;
+  /* background-color: #ee82ee; */
+  background: rgb(0,0,255);
+  background: linear-gradient(132deg, rgba(0,0,255,1) 0%, rgba(138,43,226,1) 51%);
   transition: all 0.5s ease;
 }
 .audio--length{
   display: flex; flex-direction: row; align-items: center; justify-content: space-between;
   font-size: 0.6rem;
+  font-family: "GreatVibes", sans-serif;
 }
 
 .player--button{
+  cursor: url('../public/star.png'), auto;
   width: 60px;
   /* background-color:rgba(255, 255, 255, 0.05); */
   height: 60px;
@@ -202,8 +236,9 @@ body {
   border-radius: 28px;
 }
 .play-icon:hover{
-  color: black;
-  background-color: white;
+  color: #8a2be2;
+  background-color:#0000ff22;
+  transform: scale(1.2);
 }
 @media only screen and (max-width:600px) {
  .MusicPlayerBody{
@@ -211,6 +246,20 @@ body {
  } 
  .BlockquoteBody{
   width: 90%;
+  padding: 1rem 0.8rem;
+  text-align: left;
+ }
+ 
+ .quote{
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  text-align: left;
+ }
+ .Blockquote--author{
+  font-size: 0.8rem;
+ }
+ .quote-start, .quote-end{
+  font-size: 1rem;
  }
  .player--info span{
   display: none;
