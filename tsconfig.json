@@ -4,8 +4,7 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
+    "strict": false,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
@@ -15,8 +14,10 @@
     "incremental": true,
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+    "noEmit":false,
+
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.jsx", "pages/components/shuffle.js"],
   "exclude": ["node_modules"]
 }
