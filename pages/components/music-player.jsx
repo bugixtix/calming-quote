@@ -1,15 +1,9 @@
 'use client'
-// import {Card, CardBody, Button, Progress, CardProps} from "@heroui/react";
 import {useState, FC, useEffect, useRef, useMemo} from "react";
-// import {clsx} from "@heroui/shared-utils";
 import { MdOutlinePauseCircleOutline as PauseOl} from "react-icons/md";
-// import { MdOutlinePauseCircleFilled as PauseFi } from "react-icons/md";
-// import { MdOutlinePlayCircleFilled as PlayFi} from "react-icons/md";
 import { MdPlayCircleOutline as PlayOl } from "react-icons/md";
 import Image from "next/image";
-// import Lofi from '@/public/lofi.jpg'
 import MP3_DATA from '@/pages/mp3_list.json'
-// import shuffledMP3 from "./shuffle.js";
 
 export const MusicPlayer = () =>{
 
@@ -30,31 +24,19 @@ export const MusicPlayer = () =>{
     const [currentTime, setCurrentTime] = useState(0)
     const [maxTime, setMaxTime] = useState(0)
     const [ended, setEnded] = useState(false)
-    const [started, setStarted] = useState(false)
+    const [started, setStarted] = useState(true)
     
     useEffect(()=>{
         const array = shuffledMP3()
         setTrack(array)
-        function handleStart(){
-            setStarted(true)
-            document.body.removeEventListener("click", handleStart)
-        }
-        // document.querySelector('.body').addEventListener('click',handleStart )
-        document.body.addEventListener("click", handleStart, { once: true });
-        return ()=> {document.body.removeEventListener('click', handleStart)}
-    },[])
-    useEffect(()=>{
+
         function Do(){
-            soundRef.current.play()
-            setPlaying(true)
             setStarted(false)
         }
-        if(started){
-            setTimeout(Do, 1000)}
-        return ()=>{
-            clearTimeout(Do, 1000)
-        }
-    },[started])
+        setTimeout(Do,5000)
+        return()=>clearTimeout(Do, 5000)
+    },[])
+
     
     useEffect(()=>{
 
@@ -123,7 +105,7 @@ export const MusicPlayer = () =>{
     
    return(
     <div className="MusicPlayer">
-        <div className="MusicPlayerBody">
+        <div className={`MusicPlayerBody ${started ? 'opacity-on' : 'opacity-off'}`}>
             <div className="player--img">
                 <Image priority alt="track image" src={track[trackNr].track_cover.toString() || '/lofi.jpg'} width={100} height={100} className="image"/>
             </div>
@@ -142,12 +124,11 @@ export const MusicPlayer = () =>{
             </div>
             
             <div className="player--button">
-                <button className="play-button" onClick={HandleSound}>
+                <button className={`play-button`} onClick={HandleSound}>
                 {
-                    playing ? <PauseOl className="play-icon"/> :  <PlayOl className="play-icon"/>
+                    playing ? <PauseOl className={`play-icon`}/> :  <PlayOl className={`play-icon`}/>
                 }
                 </button>
-                {/* <button onClick={HandleClick}> click</button> */}
             </div>
         </div>
 
